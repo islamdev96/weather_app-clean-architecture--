@@ -70,13 +70,66 @@ class _MyHomePageState extends State<MyHomePage> {
               return ListView.builder(
                   itemCount: 1,
                   itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        ListTile(
-                          title: Text(snapshot.data!.cityName),
-                          subtitle: Text(snapshot.data!.main),
-                        ),
-                      ],
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 200.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          ListTile(
+                            title: Center(
+                              child: Text(
+                                snapshot.data!.cityName,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 30,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                            subtitle: Center(
+                              child: Text(
+                                snapshot.data!.main,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Text(
+                              snapshot.data!.description,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Text(
+                              snapshot.data!.pressure.toString(),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Text(
+                              snapshot.data!.id.toString(),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     );
                   });
             } else {
